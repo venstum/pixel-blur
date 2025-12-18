@@ -1,4 +1,4 @@
-# Pixel Blur
+# pixel-blur
 
 Interactive image workspace built with Next.js, TypeScript, and Bun. Blur regions, magnify areas, or drop stickers on top of your images. Terminus font provides a consistent UI look.
 
@@ -38,4 +38,3 @@ Open [http://localhost:3000](http://localhost:3000) to use the app.
 - Assets live in `assets/` and `public/`. The favicon is `public/icon.svg`.
 - UI font is loaded locally from Terminus (`src/app/fonts.ts`).
 - Undo is supported (Ctrl/Cmd+Z) for lens/sticker actions.
-- Linux is the only supported OS for now desktop application.
