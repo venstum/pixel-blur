@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+:root {
+  --background: #070707;
+  --foreground: #f6f6f6;
+  --panel: rgba(10, 10, 10, 0.92);
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: #fdfdfd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-terminus);
+  --font-mono: var(--font-terminus);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.04), transparent 30%),
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.04), transparent 26%), #050505;
+  color: var(--foreground);
+  font-family: var(--font-terminus), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.placeholder-text {
+  font-family: var(--font-terminus), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.22);
+  color: #000000;
+}
+
+.control-button {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, #1b1b1b, #0f0f0f);
+  color: #f6f6f6;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.control-compact {
+  min-height: 46px;
+  min-width: 96px;
+  padding-inline: 0.9rem;
+  border-radius: 12px;
+}
+
+.control-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+  background: linear-gradient(145deg, #1f1f1f, #121212);
+}
+
+.control-button:active {
+  transform: translateY(0);
+}
+
+.range-input {
+  width: 100%;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f5f5f5, #bfbfbf);
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.range-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #0b0b0b;
+  border: 2px solid #f5f5f5;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.range-input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #0b0b0b;
+  border: 2px solid #f5f5f5;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-panel {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 22px 18px;
+  background: radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.06), transparent 45%),
+    var(--panel);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.select-compact {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  padding: 10px 42px 10px 12px;
+  color: #f5f5f5;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23f5f5f5' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.select-compact:focus {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.select-compact option {
+  background: #0b0b0b;
+  color: #f5f5f5;
+  font-weight: 600;
+}
