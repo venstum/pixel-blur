@@ -156,13 +156,6 @@ function drawLens(
   ctx.restore();
 
   ctx.save();
-  ctx.strokeStyle = "rgba(255,255,255,0.45)";
-  ctx.lineWidth = 1.2;
-  ctx.shadowColor = "rgba(0,0,0,0.55)";
-  ctx.shadowBlur = 8;
-  drawShape(ctx, lens, radius);
-  ctx.stroke();
-
   if (lens.mode === "magnify") {
     drawGlassOverlay(ctx, lens, radius);
   }
@@ -272,13 +265,6 @@ function drawSticker(ctx: CanvasRenderingContext2D, sticker: Sticker) {
     sticker.width,
     sticker.height,
   );
-  ctx.restore();
-
-  ctx.save();
-  ctx.strokeStyle = "rgba(255,255,255,0.25)";
-  ctx.lineWidth = 1;
-  drawShape(ctx, sticker, radius);
-  ctx.stroke();
   ctx.restore();
 }
 
