@@ -173,7 +173,7 @@ export default function Home() {
 
   return (
     <main className="h-screen overflow-hidden bg-[radial-gradient(circle_at_15%_20%,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.05),transparent_22%),#050505] text-white">
-      <div className="flex h-full w-full flex-col gap-6 px-4 py-6 lg:flex-row lg:items-start lg:gap-10 lg:px-8">
+      <div className="flex h-full w-full flex-col gap-4 px-4 py-4 lg:flex-row lg:items-start lg:gap-8 lg:px-8">
         <div className="w-full max-w-[340px] shrink-0 self-start lg:sticky lg:top-8">
           <ControlPanel
             mode={mode}

@@ -26,7 +26,7 @@ body {
     radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.04), transparent 26%), #050505;
   color: var(--foreground);
   font-family: var(--font-terminus), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .placeholder-text {

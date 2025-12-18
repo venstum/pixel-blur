@@ -812,7 +812,7 @@ const CanvasStage = forwardRef<StageHandle, CanvasStageProps>(
           />
         </div>
         {activeTextId && (
-          <div className="mt-3 w-full max-w-md rounded-lg border border-white/10 bg-black/60 p-3 text-sm text-white backdrop-blur">
+          <div className="pointer-events-auto absolute bottom-4 left-4 z-10 w-[min(420px,calc(100%-2rem))] rounded-lg border border-white/10 bg-black/70 p-3 text-sm text-white shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur">
             <div className="mb-2 text-[11px] uppercase tracking-[0.14rem] text-neutral-400">
               Edit selected text
             </div>
