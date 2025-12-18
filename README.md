@@ -31,7 +31,3 @@ Open [http://localhost:3000](http://localhost:3000) to use the app.
 - Assets live in `assets/` and `public/`. The favicon is `public/icon.svg`.
 - UI font is loaded locally from Terminus (`src/app/fonts.ts`).
 - Undo is supported (Ctrl/Cmd+Z) for lens/sticker actions.
-
-## License
-
-GPL-3.0
