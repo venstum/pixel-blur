@@ -2,6 +2,8 @@
   "name": "pixel-blur",
   "version": "0.1.0",
   "private": true,
+  "description": "Interactive image workspace for blur, magnify, and sticker overlays.",
+  "author": "venstum",
   "main": "electron/main.js",
   "scripts": {
     "dev": "next dev",
@@ -33,6 +35,7 @@
     "appId": "com.pixelblur.app",
     "productName": "PixelBlur",
     "icon": "public/icon.png",
+    "asar": true,
     "files": [
       "electron/**/*",
       ".next/**/*",
@@ -41,7 +44,6 @@
       "next.config.*",
       "node_modules/**/*"
     ],
-    "asar": false,
     "linux": {
       "target": [
         "AppImage"
