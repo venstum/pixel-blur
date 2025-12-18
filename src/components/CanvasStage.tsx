@@ -223,7 +223,7 @@ const CanvasStage = forwardRef<StageHandle, CanvasStageProps>(
       const containerWidth = containerRef.current?.clientWidth ?? window.innerWidth ?? 1024;
       const containerHeight = containerRef.current?.clientHeight ?? window.innerHeight ?? 900;
       const maxWidth = Math.max(containerWidth - 24, 480);
-      const maxHeight = Math.max(420, containerHeight - 40);
+      const maxHeight = Math.max(360, containerHeight - 40);
 
       if (effectiveImage) {
         const ratio = Math.min(
@@ -792,7 +792,7 @@ const CanvasStage = forwardRef<StageHandle, CanvasStageProps>(
     return (
       <div
         ref={containerRef}
-        className="relative flex w-full min-h-[75vh] flex-col overflow-hidden rounded-[22px] bg-[#0b0b0b] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] ring-1 ring-white/5"
+        className="relative flex h-full w-full flex-col overflow-hidden rounded-[22px] bg-[#0b0b0b] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] ring-1 ring-white/5"
       >
         <div className="relative flex h-full w-full items-center justify-center rounded-2xl bg-[#0b0b0b] p-4 ring-1 ring-white/5">
           <canvas
