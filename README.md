@@ -1,6 +1,6 @@
 # pixel-blur
 
-Interactive image workspace built with Next.js, TypeScript, and Bun. Blur regions, magnify areas, or drop stickers on top of your images. Terminus font provides a consistent UI look.
+Interactive image workspace built with Next.js, TypeScript, and Bun. Blur regions, magnify areas, or drop stickers on top of your images.
 
 | Magnify | Blur |
 | --- | --- |
