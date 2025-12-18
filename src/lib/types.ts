@@ -1,4 +1,4 @@
-export type Mode = "blur" | "magnify" | "sticker";
+export type Mode = "blur" | "magnify" | "sticker" | "text";
 
 export type LensShape = "circle" | "rounded";
 
@@ -39,4 +39,14 @@ export type Sticker = {
   height: number;
   image: HTMLImageElement;
   shape: LensShape;
+};
+
+export type TextOverlay = {
+  id: string;
+  x: number;
+  y: number;
+  text: string;
+  color: string;
+  size: number;
+  font: string;
 };

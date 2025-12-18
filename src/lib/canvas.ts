@@ -1,13 +1,16 @@
-import { Lens, LensPreview, Sticker } from "./types";
+import { Lens, LensPreview, Sticker, TextOverlay } from "./types";
 
 type RenderArgs = {
   canvas: HTMLCanvasElement | null;
   image: HTMLImageElement | null;
   lenses: Lens[];
   stickers: Sticker[];
+  texts: TextOverlay[];
   preview: LensPreview | null;
   width: number;
   height: number;
+  backgroundColor: string;
+  showPlaceholder: boolean;
 };
 
 const clamp = (value: number, min: number, max: number) =>
@@ -19,9 +22,12 @@ export function renderScene({
   image,
   lenses,
   stickers,
+  texts,
   preview,
   width,
   height,
+  backgroundColor,
+  showPlaceholder,
 }: RenderArgs) {
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
@@ -57,13 +63,16 @@ export function renderScene({
       drawHeight,
     );
   } else {
-    drawPlaceholder(ctx, width, height);
+    drawPlaceholder(ctx, width, height, backgroundColor, showPlaceholder);
   }
 
   // Stickers sit above the base image.
   if (draw) {
     stickers.forEach((sticker) => drawSticker(ctx, sticker));
   }
+
+  // Text sits above stickers but below lenses.
+  texts.forEach((text) => drawText(ctx, text));
 
   // Draw connectors behind lenses.
   lenses
@@ -84,9 +93,13 @@ function drawPlaceholder(
   ctx: CanvasRenderingContext2D,
   width: number,
   height: number,
+  backgroundColor: string,
+  showPlaceholder: boolean,
 ) {
-  ctx.fillStyle = "#0a0a0a";
+  ctx.fillStyle = backgroundColor;
   ctx.fillRect(0, 0, width, height);
+
+  if (!showPlaceholder) return;
 
   ctx.fillStyle = "rgba(255,255,255,0.8)";
   ctx.font = "700 24px var(--font-terminus, 'Inter', sans-serif)";
@@ -265,6 +278,21 @@ function drawSticker(ctx: CanvasRenderingContext2D, sticker: Sticker) {
     sticker.width,
     sticker.height,
   );
+  ctx.restore();
+}
+
+function drawText(ctx: CanvasRenderingContext2D, text: TextOverlay) {
+  ctx.save();
+  ctx.fillStyle = text.color;
+  const safeFont = text.font.includes(" ") ? `'${text.font}'` : text.font;
+  ctx.font = `${text.size}px ${safeFont}, Terminus, monospace`;
+  ctx.textBaseline = "top";
+
+  const lines = text.text.split(/\r?\n/);
+  const lineHeight = text.size * 1.2;
+  lines.forEach((line, idx) => {
+    ctx.fillText(line, text.x, text.y + idx * lineHeight);
+  });
   ctx.restore();
 }
 
