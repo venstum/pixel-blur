@@ -30,8 +30,8 @@ Open [http://localhost:3000](http://localhost:3000) to use the app.
 
 ## Desktop (Electron)
 
-- Dev: `bun run dev:electron` (starts Next dev server and launches Electron pointing at it).
-- Build: `bun run build:desktop` (runs `next build` then packages an AppImage at `dist/pixel-blur-<version>.AppImage`).
+- Dev: `bun run dev:electron`
+- Build: `bun run build:desktop`
 
 ## Project Notes
 
