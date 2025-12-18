@@ -2,9 +2,12 @@
   "name": "pixel-blur",
   "version": "0.1.0",
   "private": true,
+  "main": "electron/main.js",
   "scripts": {
     "dev": "next dev",
+    "dev:electron": "concurrently -k \"bun run dev\" \"bunx --bun electron .\"",
     "build": "next build",
+    "build:desktop": "next build && node node_modules/electron-builder/out/cli/cli.js -l AppImage",
     "start": "next start",
     "lint": "eslint"
   },
@@ -18,9 +21,33 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "build": {
+    "appId": "com.pixelblur.app",
+    "productName": "PixelBlur",
+    "icon": "public/icon.png",
+    "files": [
+      "electron/**/*",
+      ".next/**/*",
+      "public/**/*",
+      "package.json",
+      "next.config.*",
+      "node_modules/**/*"
+    ],
+    "asar": false,
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Graphics",
+      "artifactName": "pixel-blur-${version}.${ext}"
+    }
   }
 }
