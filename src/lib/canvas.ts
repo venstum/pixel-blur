@@ -88,8 +88,8 @@ function drawPlaceholder(
   ctx.fillStyle = "#0a0a0a";
   ctx.fillRect(0, 0, width, height);
 
-  ctx.fillStyle = "rgba(255,255,255,0.7)";
-  ctx.font = "24px var(--font-terminus, 'Inter', sans-serif)";
+  ctx.fillStyle = "rgba(255,255,255,0.8)";
+  ctx.font = "700 24px var(--font-terminus, 'Inter', sans-serif)";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   ctx.fillText("OPEN AN IMAGE TO START EDITING.", width / 2, height / 2);

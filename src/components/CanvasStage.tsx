@@ -515,12 +515,9 @@ const CanvasStage = forwardRef<StageHandle, CanvasStageProps>(
     return (
       <div
         ref={containerRef}
-        className="relative w-full overflow-hidden rounded-[26px] border border-[var(--border)] bg-[#0c0c0c]/90 p-4 shadow-[0_40px_120px_rgba(0,0,0,0.45)]"
+        className="relative w-full min-h-[70vh] overflow-hidden rounded-[22px] bg-[#0b0b0b] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] ring-1 ring-white/5"
       >
-        <div className="mb-3 flex items-center justify-between text-xs uppercase tracking-[0.2rem] text-neutral-500">
-          <span>Workspace</span>
-        </div>
-        <div className="relative flex items-center justify-center rounded-2xl bg-[#0d0d0d] p-4 ring-1 ring-white/5">
+        <div className="relative flex w-full items-center justify-center rounded-2xl bg-[#0b0b0b] p-4 ring-1 ring-white/5">
           <canvas
             ref={canvasRef}
             width={size.width}

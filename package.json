@@ -7,7 +7,7 @@
   "main": "electron/main.js",
   "scripts": {
     "dev": "next dev",
-    "dev:electron": "concurrently -k \"bun run dev\" \"bunx --bun electron .\"",
+    "dev:electron": "ELECTRON_RUN_AS_NODE= env -u ELECTRON_RUN_AS_NODE concurrently -k \"bun run dev\" \"env -u ELECTRON_RUN_AS_NODE ./node_modules/.bin/electron .\"",
     "build": "next build",
     "build:desktop": "next build && node node_modules/electron-builder/out/cli/cli.js -l AppImage",
     "start": "next start",
@@ -33,9 +33,9 @@
   },
   "build": {
     "appId": "com.pixelblur.app",
-    "productName": "PixelBlur",
+    "productName": "pixel-blur",
     "icon": "public/icon.png",
-    "asar": true,
+    "asar": false,
     "files": [
       "electron/**/*",
       ".next/**/*",
