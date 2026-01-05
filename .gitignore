@@ -13,3 +13,4 @@ coverage
 *.asar
 *.asar.unpacked
 electron-builder-*
+next-env.d.ts
